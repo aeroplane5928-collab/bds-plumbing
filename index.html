@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDS Plumbing | Sydney's Trusted Local Plumber</title>
+<meta name="description" content="Honest, reliable plumbing in Sydney. Fast response, fair pricing, quality work. Call Joe today for blocked drains, hot water, gas fitting and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1e2535;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ── TOKENS ───────────────────────────────────── */
+:root{
+  --navy:    #0d1f3c;
+  --navy2:   #162848;
+  --navy3:   #1e3460;
+  --blue:    #1a56db;
+  --blue-lt: #2563eb;
+  --white:   #ffffff;
+  --g50:     #f8fafc;
+  --g100:    #f1f5f9;
+  --g200:    #e2e8f0;
+  --g400:    #94a3b8;
+  --g600:    #64748b;
+  --g800:    #1e293b;
+  --text:    #1e2535;
+  --wrap:    960px;
+  --r:       10px;
+  --sh:      0 2px 16px rgba(13,31,60,.10);
+  --sh-lg:   0 8px 40px rgba(13,31,60,.15);
+  --t:       .24s ease;
+}
+
+/* ── LAYOUT ───────────────────────────────────── */
+.w{max-width:var(--wrap);margin:0 auto;padding:0 20px;width:100%}
+section{width:100%}
+
+/* ── TYPE — fixed px only, no vw/clamp ───────── */
+.t-hero    {font-size:42px;font-weight:800;line-height:1.12;letter-spacing:-.5px}
+.t-h2      {font-size:32px;font-weight:800;line-height:1.18;letter-spacing:-.3px}
+.t-h3      {font-size:19px;font-weight:700;line-height:1.3}
+.t-lead    {font-size:17px;font-weight:400;line-height:1.7;color:var(--g600)}
+.t-sm      {font-size:13px}
+.t-xs      {font-size:11.5px}
+.lbl{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+
+/* ── BUTTONS ──────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-weight:700;font-size:14px;padding:13px 24px;border-radius:8px;text-decoration:none;cursor:pointer;border:none;transition:var(--t);white-space:nowrap;letter-spacing:.1px}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 2px 12px rgba(26,86,219,.25)}
+.btn-blue:hover{background:var(--blue-lt);transform:translateY(-1px);box-shadow:0 4px 18px rgba(26,86,219,.32)}
+.btn-white{background:#fff;color:var(--navy);box-shadow:var(--sh)}
+.btn-white:hover{background:var(--g100);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-outline:hover{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.08);transform:translateY(-1px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy2);transform:translateY(-1px)}
+
+/* ── TOPBAR ───────────────────────────────────── */
+.topbar{background:var(--navy);padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.tb-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tb-left{display:flex;align-items:center;gap:20px}
+.tb-item{display:flex;align-items:center;gap:6px;font-size:12.5px;color:rgba(255,255,255,.6);text-decoration:none;transition:var(--t)}
+.tb-item:hover{color:#fff}
+.tb-badge{background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:3px 11px;border-radius:5px}
+
+/* ── NAV ──────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--g200);box-shadow:0 1px 8px rgba(13,31,60,.06)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-mark{width:38px;height:38px;background:var(--navy);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-name{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+.logo-tag{font-size:10px;font-weight:600;color:var(--g400);letter-spacing:1.2px;text-transform:uppercase;margin-top:1px}
+.nav-ul{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-ul a{font-size:13.5px;font-weight:500;color:var(--g600);text-decoration:none;transition:var(--t)}
+.nav-ul a:hover{color:var(--navy)}
+.nav-r{display:flex;align-items:center;gap:12px}
+.nav-ph{text-decoration:none;display:flex;flex-direction:column;align-items:flex-end}
+.nav-ph-l{font-size:9.5px;font-weight:700;color:var(--g400);letter-spacing:1px;text-transform:uppercase}
+.nav-ph-n{font-size:17px;font-weight:800;color:var(--navy)}
+.ham{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.ham span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:var(--t)}
+
+/* ── MOBILE NAV ───────────────────────────────── */
+.mob{display:none;position:fixed;inset:0;background:var(--navy);z-index:200;padding:70px 24px 32px;flex-direction:column;overflow-y:auto}
+.mob.open{display:flex}
+.mob-x{position:absolute;top:16px;right:20px;background:none;border:none;cursor:pointer;color:#fff;font-size:24px;line-height:1}
+.mob a{font-size:26px;font-weight:700;color:#fff;text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block;transition:var(--t)}
+.mob a:hover{color:var(--blue)}
+.mob-btns{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+
+/* ── HERO ─────────────────────────────────────── */
+.hero{background:var(--navy);padding:80px 0 64px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-80px;right:-80px;width:440px;height:440px;background:radial-gradient(circle,rgba(26,86,219,.18),transparent 68%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-60px;left:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(26,86,219,.08),transparent 70%);pointer-events:none}
+.hero-dots{position:absolute;inset:0;opacity:.025;background-image:radial-gradient(rgba(255,255,255,.9) 1px,transparent 1px);background-size:28px 28px}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:center}
+.hero-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(26,86,219,.15);border:1px solid rgba(26,86,219,.3);border-radius:5px;padding:5px 12px;margin-bottom:18px}
+.hero-pill span{font-size:11px;font-weight:700;color:#93c5fd;letter-spacing:.5px;text-transform:uppercase}
+.hero h1{color:#fff;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:#60a5fa}
+.hero-sub{color:rgba(255,255,255,.6);font-size:16px;line-height:1.72;max-width:440px;margin-bottom:30px}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.hero-trust{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ht{display:flex;align-items:center;gap:7px}
+.ht-stars{display:flex;gap:2px}
+.ht-star{font-size:14px}
+.ht-text{font-size:12.5px;color:rgba(255,255,255,.6);font-weight:500}
+.ht-sep{width:1px;height:16px;background:rgba(255,255,255,.15)}
+
+/* hero card */
+.hcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px 20px;backdrop-filter:blur(8px)}
+.hcard-title{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.hcard-title::before{content:'';width:3px;height:12px;background:var(--blue);border-radius:2px;display:block}
+.hcard-row{display:flex;justify-content:space-between;align-items:center;padding:9px 10px;border-radius:7px;transition:var(--t)}
+.hcard-row:hover{background:rgba(255,255,255,.05)}
+.hcard-k{font-size:12px;color:rgba(255,255,255,.45)}
+.hcard-v{font-size:12.5px;font-weight:700;color:#fff}
+.hcard-v.hi{color:#60a5fa}
+.hcard-div{height:1px;background:rgba(255,255,255,.07);margin:12px 0}
+.hcard-cta{display:flex;flex-direction:column;gap:8px}
+.hcard-cta .btn{justify-content:center;font-size:13.5px;padding:12px 16px}
+
+/* ── TICKER ───────────────────────────────────── */
+.ticker{background:var(--blue);padding:10px 0;overflow:hidden}
+.tick-track{display:flex;gap:32px;width:max-content;animation:tickL 28s linear infinite;white-space:nowrap}
+.tick-track:hover{animation-play-state:paused}
+.tick{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#fff}
+.tick-sep{width:4px;height:4px;background:rgba(255,255,255,.3);border-radius:50%;flex-shrink:0}
+@keyframes tickL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTION SHARED ───────────────────────────── */
+.section-light{background:var(--g50);padding:80px 0}
+.section-white{background:#fff;padding:80px 0}
+.section-dark{background:var(--navy);padding:80px 0}
+.section-head{margin-bottom:44px}
+.section-head.center{text-align:center}
+.section-head.center .t-lead{margin:0 auto}
+
+/* ── SERVICES ─────────────────────────────────── */
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sc{background:#fff;border:1px solid var(--g200);border-radius:var(--r);padding:26px 22px;transition:var(--t);position:relative;overflow:hidden;cursor:default}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:var(--t)}
+.sc:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:transparent}
+.sc:hover::after{transform:scaleX(1)}
+.sc-icon{width:46px;height:46px;background:rgba(26,86,219,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px;transition:var(--t)}
+.sc:hover .sc-icon{background:var(--blue)}
+.sc h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.sc p{font-size:13px;color:var(--g600);line-height:1.65}
+.sc-badge{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--blue);background:rgba(26,86,219,.08);border-radius:4px;padding:3px 9px;letter-spacing:.2px}
+
+/* emergency card */
+.sc-emergency{background:var(--navy);border-color:transparent;grid-column:span 3;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.sc-emergency::after{display:none}
+.sc-emergency:hover{transform:none;box-shadow:none}
+.sc-emergency h3{font-size:20px;color:#fff}
+.sc-emergency p{color:rgba(255,255,255,.6);font-size:13.5px}
+.sc-emergency .sc-icon{background:rgba(26,86,219,.2)}
+.sc-emergency-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0}
+.sc-emergency-stat{text-align:right}
+.sc-emergency-stat-n{font-size:28px;font-weight:800;color:#60a5fa;line-height:1}
+.sc-emergency-stat-l{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+
+/* ── REVIEWS ──────────────────────────────────── */
+.reviews-wrap{overflow:hidden;position:relative}
+.reviews-wrap::before,.reviews-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.reviews-wrap::before{left:0;background:linear-gradient(to right,var(--g50),transparent)}
+.reviews-wrap::after{right:0;background:linear-gradient(to left,var(--g50),transparent)}
+.rev-track{display:flex;gap:14px;width:max-content;padding:4px 0}
+.rev-track-l{animation:mqL 36s linear infinite}
+.rev-track-r{animation:mqR 44s linear infinite}
+.rev-track:hover{animation-play-state:paused}
+@keyframes mqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+
+.rc{background:#fff;border:1px solid var(--g200);border-radius:var(--r);padding:20px 22px;width:300px;flex-shrink:0;transition:var(--t)}
+.rc:hover{border-color:rgba(26,86,219,.25);box-shadow:var(--sh);transform:translateY(-2px)}
+.rc-stars{color:#f59e0b;font-size:13px;letter-spacing:1.5px;margin-bottom:10px}
+.rc-text{font-size:13px;color:var(--g800);line-height:1.65;margin-bottom:14px;font-style:italic}
+.rc-text::before{content:'\201C';font-size:28px;color:var(--blue);line-height:0;vertical-align:-10px;margin-right:2px;font-style:normal}
+.rc-au{display:flex;align-items:center;gap:9px}
+.rc-av{width:32px;height:32px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.rc-name{font-weight:700;font-size:13px;color:var(--navy)}
+.rc-loc{font-size:11px;color:var(--g400)}
+
+/* ── WHY ──────────────────────────────────────── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.why-pts{display:flex;flex-direction:column;gap:6px;margin-top:24px}
+.wp{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:9px;border:1px solid transparent;transition:var(--t)}
+.wp:hover{background:var(--g50);border-color:var(--g200)}
+.wp-icon{width:40px;height:40px;border-radius:9px;background:rgba(26,86,219,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px;transition:var(--t)}
+.wp:hover .wp-icon{background:var(--blue)}
+.wp h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.wp p{font-size:12.5px;color:var(--g600);line-height:1.6}
+
+/* why right card */
+.why-card{background:var(--navy);border-radius:14px;padding:32px 28px;position:relative;overflow:hidden}
+.why-card::after{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(26,86,219,.2),transparent 70%);pointer-events:none}
+.why-card h3{font-size:26px;font-weight:800;color:#fff;line-height:1.18;margin-bottom:6px;letter-spacing:-.3px}
+.why-card h3 span{color:#60a5fa}
+.why-card > p{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px}
+.wc-list{display:flex;flex-direction:column;gap:8px}
+.wci{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 13px}
+.wci-dot{width:22px;height:22px;background:var(--blue);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px}
+.wci span{font-size:12.5px;color:rgba(255,255,255,.75);font-weight:500}
+.why-lic{margin-top:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(26,86,219,.12);border:1px solid rgba(26,86,219,.22);border-radius:6px;padding:8px 12px;font-size:11.5px;font-weight:700;color:#93c5fd}
+
+/* ── ABOUT ────────────────────────────────────── */
+.about-in{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.about-img{background:var(--g100);border-radius:14px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px dashed var(--g200)}
+.about-img-icon{font-size:48px}
+.about-img-txt{font-size:12px;font-weight:600;color:var(--g400);text-align:center}
+.about-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.af{background:var(--g50);border:1px solid var(--g200);border-radius:9px;padding:16px 14px;text-align:center}
+.af-n{font-size:28px;font-weight:800;color:var(--navy);line-height:1}
+.af-l{font-size:11.5px;color:var(--g600);margin-top:3px}
+
+/* ── CTA BAND ─────────────────────────────────── */
+.cta-band{background:var(--blue);padding:60px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);pointer-events:none}
+.cta-band h2{font-size:30px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.3px}
+.cta-band p{font-size:15px;color:rgba(255,255,255,.75);margin-bottom:28px;max-width:420px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ── CONTACT ──────────────────────────────────── */
+.contact-in{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.c-ph-block{background:var(--g50);border:1px solid var(--g200);border-radius:12px;padding:24px;text-align:center;margin-top:22px}
+.c-ph-l{font-size:10px;font-weight:700;color:var(--g400);letter-spacing:1.5px;text-transform:uppercase}
+.c-ph-n a{font-size:32px;font-weight:800;color:var(--navy);text-decoration:none;display:block;margin:6px 0;transition:var(--t)}
+.c-ph-n a:hover{color:var(--blue)}
+.c-ph-s{font-size:12px;color:var(--g600)}
+.c-dets{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.cd{display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--g600)}
+.cd-icon{width:36px;height:36px;border-radius:8px;background:rgba(26,86,219,.08);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+
+/* form */
+.c-form{background:var(--g50);border:1px solid var(--g200);border-radius:14px;padding:32px 28px}
+.c-form h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:4px;letter-spacing:-.2px}
+.c-form > p{font-size:13px;color:var(--g600);margin-bottom:20px}
+.fg{margin-bottom:13px}
+.fg label{display:block;font-size:11px;font-weight:700;color:var(--g600);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 13px;border:1.5px solid var(--g200);border-radius:8px;font-family:inherit;font-size:14px;color:var(--text);background:#fff;transition:var(--t);outline:none;-webkit-appearance:none;appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.09)}
+.fg textarea{resize:vertical;min-height:90px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.f-note{font-size:11px;color:var(--g400);text-align:center;margin-top:8px}
+.f-success{display:none;text-align:center;padding:24px}
+.f-si{width:50px;height:50px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px}
+.f-success h4{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.f-success p{font-size:13px;color:var(--g600)}
+
+/* ── FOOTER ───────────────────────────────────── */
+footer{background:var(--navy);padding:48px 0 20px}
+.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.ft-logo{display:flex;align-items:center;gap:9px;text-decoration:none;margin-bottom:12px}
+.ft-tag{font-size:13px;color:rgba(255,255,255,.38);line-height:1.65;max-width:210px}
+.ft-cl{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;margin-top:9px;transition:var(--t)}
+.ft-cl:hover{color:var(--blue)}
+.ft-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:13px}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:7px}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:var(--t)}
+.ft-links a:hover{color:#fff}
+.ft-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ft-copy{font-size:11.5px;color:rgba(255,255,255,.28)}
+.ft-lic{font-size:11.5px;color:rgba(26,86,219,.7)}
+
+/* ── FLOAT CALL ───────────────────────────────── */
+.float{position:fixed;bottom:18px;right:18px;z-index:999;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.float.on{opacity:1;pointer-events:all}
+.float-btn{display:flex;align-items:center;gap:7px;padding:12px 20px;border-radius:8px;background:var(--blue);color:#fff;font-family:inherit;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 18px rgba(26,86,219,.38);transition:var(--t)}
+.float-btn:hover{background:var(--blue-lt);transform:scale(1.02)}
+
+/* ── REVEAL ───────────────────────────────────── */
+.rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rev.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}
+
+/* ── RESPONSIVE — TABLET ≤880px ───────────────── */
+@media(max-width:880px){
+  .nav-ul{display:none}
+  .ham{display:flex}
+  .hero-in{grid-template-columns:1fr}
+  .hcard{display:none}
+  .hero{padding:60px 0 48px}
+  .t-hero{font-size:34px}
+  .t-h2{font-size:26px}
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .sc-emergency{grid-column:span 2;grid-template-columns:1fr;gap:16px}
+  .sc-emergency-right{align-items:flex-start;flex-direction:row;gap:20px}
+  .why-grid{grid-template-columns:1fr;gap:36px}
+  .about-in{grid-template-columns:1fr;gap:36px}
+  .contact-in{grid-template-columns:1fr;gap:36px}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .section-light,.section-white,.section-dark{padding:60px 0}
+}
+
+/* ── RESPONSIVE — MOBILE ≤560px ──────────────── */
+@media(max-width:560px){
+  .tb-left{display:none}
+  .tb-in{justify-content:center}
+  .nav-ph{display:none}
+  .nav-in{height:58px}
+  .logo-tag{display:none}
+  .hero{padding:44px 0 36px}
+  .t-hero{font-size:28px;letter-spacing:-.2px}
+  .hero h1{margin-bottom:12px}
+  .hero-sub{font-size:14.5px}
+  .hero-btns .btn{padding:12px 18px;font-size:13.5px}
+  .hero-trust{gap:12px}
+  .ht-text{font-size:12px}
+  .section-light,.section-white,.section-dark{padding:52px 0}
+  .cta-band{padding:48px 0}
+  .cta-band h2{font-size:24px}
+  .t-h2{font-size:23px}
+  .srv-grid{grid-template-columns:1fr;gap:11px}
+  .sc-emergency{grid-column:span 1}
+  .sc-emergency-right{flex-wrap:wrap}
+  .why-grid{gap:28px}
+  .why-pts{gap:3px}
+  .about-facts{grid-template-columns:1fr 1fr}
+  .about-in{gap:28px}
+  .c-form{padding:22px 16px}
+  .c-ph-n a{font-size:26px}
+  .f2{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;justify-content:center;max-width:280px}
+  footer{padding:40px 0 16px}
+  .ft-grid{grid-template-columns:1fr;gap:24px}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:4px}
+  .float{bottom:12px;right:12px}
+  .float-btn{font-size:13px;padding:11px 16px}
+  .rc{width:252px}
+  .reviews-wrap::before,.reviews-wrap::after{width:32px}
+  .nav-r .btn{padding:9px 14px;font-size:12.5px}
+}
+@media(max-width:340px){
+  .t-hero{font-size:24px}
+  .t-h2{font-size:20px}
+  .rc{width:220px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="w">
+    <div class="tb-in">
+      <div class="tb-left">
+        <a href="tel:0400000000" class="tb-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.27z"/></svg>
+          Call Joe
+        </a>
+        <span class="tb-item">📍 Sydney, NSW</span>
+        <span class="tb-item">✓ Licensed & Insured</span>
+      </div>
+      <span class="tb-badge">⚡ Emergency Call-Outs Available</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="w">
+    <div class="nav-in">
+      <a href="#" class="logo">
+        <div class="logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="3" fill="#fff" stroke="none"/></svg>
+        </div>
+        <div>
+          <div class="logo-name">BDS Plumbing</div>
+          <div class="logo-tag">Sydney's Trusted Plumber</div>
+        </div>
+      </a>
+      <ul class="nav-ul">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-r">
+        <a href="tel:0400000000" class="nav-ph">
+          <span class="nav-ph-l">Call Now</span>
+          <span class="nav-ph-n">0400 000 000</span>
+        </a>
+        <a href="#contact" class="btn btn-blue" style="padding:10px 18px;font-size:13px;">Free Quote</a>
+        <button class="ham" onclick="document.getElementById('mobNav').classList.add('open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mob" id="mobNav">
+  <button class="mob-x" onclick="document.getElementById('mobNav').classList.remove('open')">✕</button>
+  <a href="#services" onclick="document.getElementById('mobNav').classList.remove('open')">Services</a>
+  <a href="#why" onclick="document.getElementById('mobNav').classList.remove('open')">Why Us</a>
+  <a href="#about" onclick="document.getElementById('mobNav').classList.remove('open')">About</a>
+  <a href="#reviews" onclick="document.getElementById('mobNav').classList.remove('open')">Reviews</a>
+  <a href="#contact" onclick="document.getElementById('mobNav').classList.remove('open')">Contact</a>
+  <div class="mob-btns">
+    <a href="tel:0400000000" class="btn btn-blue" style="justify-content:center;">📞 Call Joe Now</a>
+    <a href="#contact" class="btn btn-outline" style="justify-content:center;" onclick="document.getElementById('mobNav').classList.remove('open')">Get a Free Quote</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-dots"></div>
+  <div class="w">
+    <div class="hero-in">
+      <div>
+        <div class="hero-pill"><span>⭐ Sydney's Most Trusted Local Plumber</span></div>
+        <h1 class="t-hero">Sydney's Trusted,<br>Honest &amp; <em>Reliable</em><br>Plumber.</h1>
+        <p class="hero-sub">Fast response, fair pricing, and quality work you can count on. Joe fixes the problem right — first time, every time.</p>
+        <div class="hero-btns">
+          <a href="tel:0400000000" class="btn btn-blue">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.27z"/></svg>
+            Call Now
+          </a>
+          <a href="#contact" class="btn btn-outline">Get a Free Quote →</a>
+        </div>
+        <div class="hero-trust">
+          <div class="ht">
+            <div class="ht-stars"><span class="ht-star">⭐</span><span class="ht-star">⭐</span><span class="ht-star">⭐</span><span class="ht-star">⭐</span><span class="ht-star">⭐</span></div>
+            <span class="ht-text">5-Star Rated</span>
+          </div>
+          <div class="ht-sep"></div>
+          <div class="ht"><span class="ht-text">✓ Licensed & Insured</span></div>
+          <div class="ht-sep"></div>
+          <div class="ht"><span class="ht-text">✓ Trusted by hundreds of locals</span></div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-title">At a Glance</div>
+        <div class="hcard-row"><span class="hcard-k">Response Time</span><span class="hcard-v hi">Fast</span></div>
+        <div class="hcard-row"><span class="hcard-k">Coverage</span><span class="hcard-v">All Sydney</span></div>
+        <div class="hcard-row"><span class="hcard-k">Availability</span><span class="hcard-v hi">7 Days</span></div>
+        <div class="hcard-row"><span class="hcard-k">Pricing</span><span class="hcard-v">Upfront & Fair</span></div>
+        <div class="hcard-row"><span class="hcard-k">Experience</span><span class="hcard-v">10+ Years</span></div>
+        <div class="hcard-row"><span class="hcard-k">Rating</span><span class="hcard-v hi">5.0 ★</span></div>
+        <div class="hcard-div"></div>
+        <div class="hcard-cta">
+          <a href="tel:0400000000" class="btn btn-blue">Call Joe Now</a>
+          <a href="#contact" class="btn btn-outline" style="border-color:rgba(255,255,255,.15);font-size:13px;">Request a Quote Online</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="tick-track">
+    <span class="tick">🔧 Licensed & Fully Insured</span><span class="tick-sep"></span>
+    <span class="tick">✓ Honest Upfront Pricing</span><span class="tick-sep"></span>
+    <span class="tick">⚡ Emergency Call-Outs Available</span><span class="tick-sep"></span>
+    <span class="tick">🔍 Camera Drain Inspections</span><span class="tick-sep"></span>
+    <span class="tick">✓ 7-Day Service</span><span class="tick-sep"></span>
+    <span class="tick">🔧 10+ Years Experience</span><span class="tick-sep"></span>
+    <span class="tick">✓ All Sydney Suburbs</span><span class="tick-sep"></span>
+    <span class="tick">🔧 Licensed & Fully Insured</span><span class="tick-sep"></span>
+    <span class="tick">✓ Honest Upfront Pricing</span><span class="tick-sep"></span>
+    <span class="tick">⚡ Emergency Call-Outs Available</span><span class="tick-sep"></span>
+    <span class="tick">🔍 Camera Drain Inspections</span><span class="tick-sep"></span>
+    <span class="tick">✓ 7-Day Service</span><span class="tick-sep"></span>
+    <span class="tick">🔧 10+ Years Experience</span><span class="tick-sep"></span>
+    <span class="tick">✓ All Sydney Suburbs</span><span class="tick-sep"></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section-light" id="services">
+  <div class="w">
+    <div class="section-head rev">
+      <span class="lbl">What We Do</span>
+      <h2 class="t-h2">Plumbing Services<br>Done Properly</h2>
+      <p class="t-lead" style="max-width:480px;margin-top:10px;">From blocked drains to full bathroom renovations — Joe handles it all with care, skill, and no surprises on the bill.</p>
+    </div>
+    <div class="srv-grid">
+
+      <div class="sc rev d1">
+        <div class="sc-icon">🔍</div>
+        <h3>Blocked Drains</h3>
+        <p>Camera inspections to find the exact blockage — then we fix it on the spot. No guesswork, no unnecessary digging.</p>
+        <span class="sc-badge">Camera Inspection Included</span>
+      </div>
+
+      <div class="sc rev d2">
+        <div class="sc-icon">🚿</div>
+        <h3>Hot Water Systems</h3>
+        <p>Installation, repairs, and replacements for all hot water system types. Fast response when you're left in the cold.</p>
+        <span class="sc-badge">All Brands Serviced</span>
+      </div>
+
+      <div class="sc rev d3">
+        <div class="sc-icon">💧</div>
+        <h3>Leak Detection & Repairs</h3>
+        <p>We pinpoint leaks fast and fix them properly — saving you from water damage and big repair bills down the track.</p>
+        <span class="sc-badge">Non-Invasive Detection</span>
+      </div>
+
+      <div class="sc rev d4">
+        <div class="sc-icon">🔥</div>
+        <h3>Gas Fitting</h3>
+        <p>Licensed gas fitting for appliances, connections, and gas leak detection. Safety is always the priority.</p>
+        <span class="sc-badge">Licensed Gas Fitter</span>
+      </div>
+
+      <div class="sc rev d5">
+        <div class="sc-icon">🏠</div>
+        <h3>Bathroom & Kitchen</h3>
+        <p>Taps, toilets, showers, sinks, and full bathroom renovations. Neat, tidy work done right the first time.</p>
+        <span class="sc-badge">Renovations Welcome</span>
+      </div>
+
+      <!-- Emergency wide card -->
+      <div class="sc sc-emergency rev">
+        <div>
+          <div class="sc-icon" style="font-size:24px;">⚡</div>
+          <h3>Emergency Plumbing</h3>
+          <p>Burst pipe? Major leak? Sewage backup? Joe responds fast — including weekends. Don't wait, call now.</p>
+        </div>
+        <div class="sc-emergency-right">
+          <div class="sc-emergency-stat">
+            <div class="sc-emergency-stat-n">7</div>
+            <div class="sc-emergency-stat-l">Days a Week</div>
+          </div>
+          <div class="sc-emergency-stat">
+            <div class="sc-emergency-stat-n">Fast</div>
+            <div class="sc-emergency-stat-l">Response Time</div>
+          </div>
+          <a href="tel:0400000000" class="btn btn-blue" style="margin-top:8px;">Call Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section-light" id="reviews" style="padding-top:0">
+  <div class="w">
+    <div class="section-head center rev">
+      <span class="lbl">Customer Reviews</span>
+      <h2 class="t-h2">Don't Take Our Word for It</h2>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin-top:10px;">
+        <span style="font-size:18px;">⭐⭐⭐⭐⭐</span>
+        <span style="font-size:16px;font-weight:800;color:var(--navy)">5.0</span>
+        <span style="font-size:13px;color:var(--g600)">· Trusted by hundreds of Sydney locals</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 1 -->
+  <div class="reviews-wrap" style="margin-bottom:12px;">
+    <div class="rev-track rev-track-l">
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Saved me from a $1,000 replacement by actually fixing the problem instead. Honest, knowledgeable, and didn't try to upsell me anything I didn't need.</p><div class="rc-au"><div class="rc-av">SK</div><div><div class="rc-name">Sarah K.</div><div class="rc-loc">Surry Hills · 2 weeks ago</div></div></div></div>
+
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Showed me exactly where the blockage was using his camera. Fixed it on the spot. Couldn't believe how quick and professional the whole thing was.</p><div class="rc-au"><div class="rc-av">MT</div><div><div class="rc-name">Mark T.</div><div class="rc-loc">Newtown · 1 month ago</div></div></div></div>
+
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Called on a Sunday morning with a burst pipe. Joe was there within the hour. Saved us from serious water damage. Absolute legend.</p><div class="rc-au"><div class="rc-av">LB</div><div><div class="rc-name">Lisa B.</div><div class="rc-loc">Balmain · 3 weeks ago</div></div></div></div>
+
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Fair pricing, no hidden charges. He told me exactly what needed doing and what didn't. Refreshing to deal with someone so transparent.</p><div class="rc-au"><div class="rc-av">JR</div><div><div class="rc-name">James R.</div><div class="rc-loc">Parramatta · 1 month ago</div></div></div></div>
+
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Fixed our hot water system in under an hour. Professional, clean, and left the place spotless. Will not use anyone else.</p><div class="rc-au"><div class="rc-av">AW</div><div><div class="rc-name">Anna W.</div><div class="rc-loc">Manly · 2 months ago</div></div></div></div>
+
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Joe found a leak we'd been chasing for months. Other plumbers missed it. He found it in 20 minutes and fixed it properly. Brilliant.</p><div class="rc-au"><div class="rc-av">DP</div><div><div class="rc-name">David P.</div><div class="rc-loc">Mosman · 6 weeks ago</div></div></div></div>
+
+      <!-- dupe -->
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Saved me from a $1,000 replacement by actually fixing the problem instead. Honest, knowledgeable, and didn't try to upsell me anything I didn't need.</p><div class="rc-au"><div class="rc-av">SK</div><div><div class="rc-name">Sarah K.</div><div class="rc-loc">Surry Hills · 2 weeks ago</div></div></div></div>
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Showed me exactly where the blockage was using his camera. Fixed it on the spot. Couldn't believe how quick and professional the whole thing was.</p><div class="rc-au"><div class="rc-av">MT</div><div><div class="rc-name">Mark T.</div><div class="rc-loc">Newtown · 1 month ago</div></div></div></div>
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Called on a Sunday morning with a burst pipe. Joe was there within the hour. Saved us from serious water damage. Absolute legend.</p><div class="rc-au"><div class="rc-av">LB</div><div><div class="rc-name">Lisa B.</div><div class="rc-loc">Balmain · 3 weeks ago</div></div></div></div>
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Fair pricing, no hidden charges. He told me exactly what needed doing and what didn't. Refreshing to deal with someone so transparent.</p><div class="rc-au"><div class="rc-av">JR</div><div><div class="rc-name">James R.</div><div class="rc-loc">Parramatta · 1 month ago</div></div></div></div>
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Fixed our hot water system in under an hour. Professional, clean, and left the place spotless. Will not use anyone else.</p><div class="rc-au"><div class="rc-av">AW</div><div><div class="rc-name">Anna W.</div><div class="rc-loc">Manly · 2 months ago</div></div></div></div>
+      <div class="rc"><div class="rc-stars">★★★★★</div><p class="rc-text">Joe found a leak we'd been chasing for months. Other plumbers missed it. He found it in 20 minutes and fixed it properly. Brilliant.</p><div class="rc-au"><div class="rc-av">DP</div><div><div class="rc-name">David P.</div><div class="rc-loc">Mosman · 6 weeks ago</div></div></div></div>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="reviews-wrap">
+    <div class="rev-track rev-track-r">
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Incredibly honest. He could have easily told me I needed a new system but instead repaired it for a fraction of the cost. Highly recommend.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">RH</div><div><div class="rc-name" style="color:#fff;">Rachel H.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Leichhardt · 3 weeks ago</div></div></div></div>
+
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Came out on a Saturday afternoon, no extra charge mentioned, just fixed the job and left us with hot water again. Great bloke.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">TC</div><div><div class="rc-name" style="color:#fff;">Tom C.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Drummoyne · 1 month ago</div></div></div></div>
+
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">We had a gas leak and were panicking. Joe was calm, came quickly, and sorted it safely. Cannot recommend enough.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">NF</div><div><div class="rc-name" style="color:#fff;">Nadia F.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Ashfield · 5 weeks ago</div></div></div></div>
+
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Bathroom reno done perfectly. Clean, tidy, no mess left behind. Every detail was spot on. Will be using BDS for all future work.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">ML</div><div><div class="rc-name" style="color:#fff;">Michelle L.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Rozelle · 2 months ago</div></div></div></div>
+
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Best plumber I've used in Sydney. Genuinely cares about doing the right thing by the customer. Prices are very reasonable too.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">PG</div><div><div class="rc-name" style="color:#fff;">Peter G.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Marrickville · 3 months ago</div></div></div></div>
+
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Arrived exactly when he said he would, quoted upfront, and finished the job faster than expected. That's all you can ask for.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">CF</div><div><div class="rc-name" style="color:#fff;">Claire F.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Glebe · 6 weeks ago</div></div></div></div>
+
+      <!-- dupe -->
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Incredibly honest. He could have easily told me I needed a new system but instead repaired it for a fraction of the cost. Highly recommend.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">RH</div><div><div class="rc-name" style="color:#fff;">Rachel H.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Leichhardt · 3 weeks ago</div></div></div></div>
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Came out on a Saturday afternoon, no extra charge mentioned, just fixed the job and left us with hot water again. Great bloke.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">TC</div><div><div class="rc-name" style="color:#fff;">Tom C.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Drummoyne · 1 month ago</div></div></div></div>
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">We had a gas leak and were panicking. Joe was calm, came quickly, and sorted it safely. Cannot recommend enough.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">NF</div><div><div class="rc-name" style="color:#fff;">Nadia F.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Ashfield · 5 weeks ago</div></div></div></div>
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Bathroom reno done perfectly. Clean, tidy, no mess left behind. Every detail was spot on. Will be using BDS for all future work.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">ML</div><div><div class="rc-name" style="color:#fff;">Michelle L.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Rozelle · 2 months ago</div></div></div></div>
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Best plumber I've used in Sydney. Genuinely cares about doing the right thing by the customer. Prices are very reasonable too.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">PG</div><div><div class="rc-name" style="color:#fff;">Peter G.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Marrickville · 3 months ago</div></div></div></div>
+      <div class="rc" style="background:var(--navy);border-color:transparent;"><div class="rc-stars" style="color:#fbbf24;">★★★★★</div><p class="rc-text" style="color:rgba(255,255,255,.72);">Arrived exactly when he said he would, quoted upfront, and finished the job faster than expected. That's all you can ask for.</p><div class="rc-au"><div class="rc-av" style="background:var(--blue);">CF</div><div><div class="rc-name" style="color:#fff;">Claire F.</div><div class="rc-loc" style="color:rgba(255,255,255,.35);">Glebe · 6 weeks ago</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section-white" id="why">
+  <div class="w">
+    <div class="why-grid">
+      <div>
+        <span class="lbl rev">Why Choose BDS</span>
+        <h2 class="t-h2 rev">The Honest Plumber<br>Sydney Deserves</h2>
+        <div class="why-pts">
+          <div class="wp rev d1">
+            <div class="wp-icon">💰</div>
+            <div><h4>Honest & Transparent Pricing</h4><p>Upfront quotes with no hidden extras. You know the full price before we start. Always.</p></div>
+          </div>
+          <div class="wp rev d2">
+            <div class="wp-icon">⚡</div>
+            <div><h4>Fast Response, Including Weekends</h4><p>Plumbing problems don't wait for Monday. Joe is available 7 days a week for urgent jobs.</p></div>
+          </div>
+          <div class="wp rev d3">
+            <div class="wp-icon">🔍</div>
+            <div><h4>Experienced & Knowledgeable</h4><p>10+ years of hands-on plumbing experience. Joe's seen it all and knows how to fix it properly.</p></div>
+          </div>
+          <div class="wp rev d4">
+            <div class="wp-icon">✨</div>
+            <div><h4>Clean, Tidy Workmanship</h4><p>We treat your home with respect. Every job is left clean — no mess, no damage, no excuses.</p></div>
+          </div>
+          <div class="wp rev d5">
+            <div class="wp-icon">🤝</div>
+            <div><h4>Trusted Local Plumber</h4><p>Hundreds of happy Sydney customers who call back and refer their friends. That's the best review.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="rev">
+        <div class="why-card">
+          <h3>Fixed Right.<br><span>First Time.</span></h3>
+          <p>Joe doesn't cut corners or oversell. He diagnoses correctly and fixes it properly — saving you time and money.</p>
+          <div class="wc-list">
+            <div class="wci"><div class="wci-dot">✓</div><span>Camera drain inspections included</span></div>
+            <div class="wci"><div class="wci-dot">✓</div><span>Licensed plumber & gas fitter</span></div>
+            <div class="wci"><div class="wci-dot">✓</div><span>No unnecessary replacements</span></div>
+            <div class="wci"><div class="wci-dot">✓</div><span>Workmanship guarantee on all jobs</span></div>
+            <div class="wci"><div class="wci-dot">✓</div><span>Fully insured — your home is protected</span></div>
+          </div>
+          <div class="why-lic">🛡 Licensed NSW Plumber & Gas Fitter</div>
+          <a href="tel:0400000000" class="btn btn-blue" style="margin-top:18px;width:100%;justify-content:center;">Call Joe — 0400 000 000</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-light" id="about">
+  <div class="w">
+    <div class="about-in">
+      <div class="rev">
+        <div class="about-img">
+          <div class="about-img-icon">🔧</div>
+          <div class="about-img-txt">Joe on the job —<br>photo coming soon</div>
+        </div>
+      </div>
+      <div>
+        <span class="lbl rev">About BDS Plumbing</span>
+        <h2 class="t-h2 rev">Meet Joe — Your Local<br>Sydney Plumber</h2>
+        <p class="t-lead rev" style="margin-top:12px;margin-bottom:16px;">Joe started BDS Plumbing because he was tired of seeing customers get ripped off — overcharged, oversold, and left with botched work. So he built a business around doing the opposite.</p>
+        <p style="font-size:14px;color:var(--g600);line-height:1.7;margin-bottom:20px;" class="rev">With over 10 years of hands-on experience across all types of residential and commercial plumbing, Joe brings expertise, honesty, and genuine care to every job. He's not just fixing pipes — he's protecting your home and giving you peace of mind.</p>
+        <p style="font-size:14px;color:var(--g600);line-height:1.7;margin-bottom:28px;" class="rev">Based right here in Sydney, BDS Plumbing is built on word of mouth. Most of our customers come from referrals — and that tells you everything you need to know.</p>
+        <div class="about-facts rev">
+          <div class="af"><div class="af-n">10+</div><div class="af-l">Years Experience</div></div>
+          <div class="af"><div class="af-n">5★</div><div class="af-l">Average Rating</div></div>
+          <div class="af"><div class="af-n">100s</div><div class="af-l">Happy Customers</div></div>
+          <div class="af"><div class="af-n">7</div><div class="af-l">Days a Week</div></div>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;" class="rev">
+          <a href="tel:0400000000" class="btn btn-blue">Call Joe</a>
+          <a href="#contact" class="btn btn-navy">Get a Free Quote →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="w" style="position:relative;z-index:2;">
+    <h2>Need a Plumber Now?<br>We're Ready to Help.</h2>
+    <p>Don't wait — plumbing problems only get worse. Call Joe today for fast, honest, reliable service across all of Sydney.</p>
+    <div class="cta-btns">
+      <a href="tel:0400000000" class="btn btn-white" style="font-size:15px;padding:15px 28px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.27z"/></svg>
+        Call Now — 0400 000 000
+      </a>
+      <a href="#contact" class="btn btn-outline" style="font-size:15px;padding:15px 28px;">Request a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="section-white" id="contact">
+  <div class="w">
+    <div class="contact-in">
+      <div>
+        <span class="lbl rev">Get in Touch</span>
+        <h2 class="t-h2 rev">Let's Fix It Today</h2>
+        <p class="t-lead rev" style="margin-top:10px;margin-bottom:0;">Call Joe directly or fill in the form — we'll get back to you quickly. Available 7 days a week.</p>
+        <div class="c-ph-block rev">
+          <div class="c-ph-l">Call Joe Directly</div>
+          <div class="c-ph-n"><a href="tel:0400000000">0400 000 000</a></div>
+          <div class="c-ph-s">Available 7 days · Fast response guaranteed</div>
+        </div>
+        <div class="c-dets rev">
+          <div class="cd"><div class="cd-icon">📧</div>joe@bdsplumbing.com.au</div>
+          <div class="cd"><div class="cd-icon">📍</div>Sydney, NSW — All suburbs covered</div>
+          <div class="cd"><div class="cd-icon">🕐</div>Mon–Sun: Available 7 days</div>
+          <div class="cd"><div class="cd-icon">🛡</div>Licensed NSW Plumber & Gas Fitter</div>
+        </div>
+      </div>
+      <div class="c-form rev">
+        <h3>Free Quote Request</h3>
+        <p>Tell us what's going on — we'll get back to you fast.</p>
+        <div id="formWrap">
+          <div class="f2">
+            <div class="fg"><label>Name *</label><input type="text" id="fn" placeholder="Your name"></div>
+            <div class="fg"><label>Phone *</label><input type="tel" id="fp" placeholder="0400 000 000"></div>
+          </div>
+          <div class="fg"><label>Suburb</label><input type="text" placeholder="e.g. Newtown"></div>
+          <div class="fg"><label>What's the issue?</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Blocked Drain</option>
+              <option>Hot Water System</option>
+              <option>Leak Detection</option>
+              <option>Gas Fitting</option>
+              <option>Bathroom / Kitchen</option>
+              <option>Emergency Plumbing</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Extra Details</label><textarea placeholder="Briefly describe the problem..."></textarea></div>
+          <button class="btn btn-blue" onclick="submitForm()" style="width:100%;justify-content:center;padding:14px;font-size:14.5px;">Send Quote Request →</button>
+          <p class="f-note">🔒 Your details are private. No spam, ever.</p>
+        </div>
+        <div class="f-success" id="fSuccess">
+          <div class="f-si">✓</div>
+          <h4>Quote Request Sent!</h4>
+          <p>Joe will be in touch shortly. For urgent jobs call <a href="tel:0400000000" style="color:var(--blue);font-weight:700;">0400 000 000</a> directly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="w">
+    <div class="ft-grid">
+      <div>
+        <a href="#" class="ft-logo">
+          <div class="logo-mark" style="width:32px;height:32px;border-radius:7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><circle cx="12" cy="12" r="3" fill="#fff" stroke="none"/></svg></div>
+          <div><div style="font-size:15px;font-weight:800;color:#fff;">BDS Plumbing</div><div style="font-size:9.5px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:1.2px;text-transform:uppercase;">Sydney's Trusted Plumber</div></div>
+        </a>
+        <p class="ft-tag">Honest, reliable plumbing across all Sydney suburbs. Licensed, insured, and committed to doing the job right.</p>
+        <a href="tel:0400000000" class="ft-cl">📞 0400 000 000</a>
+        <a href="mailto:joe@bdsplumbing.com.au" class="ft-cl">✉ joe@bdsplumbing.com.au</a>
+        <a href="#" class="ft-cl">📍 Sydney, NSW — All Suburbs</a>
+      </div>
+      <div class="ft-col">
+        <h4>Services</h4>
+        <ul class="ft-links">
+          <li><a href="#services">Blocked Drains</a></li>
+          <li><a href="#services">Hot Water Systems</a></li>
+          <li><a href="#services">Leak Detection</a></li>
+          <li><a href="#services">Gas Fitting</a></li>
+          <li><a href="#services">Bathroom & Kitchen</a></li>
+          <li><a href="#services">Emergency Plumbing</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <ul class="ft-links">
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#about">About Joe</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Free Quote</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Service Areas</h4>
+        <ul class="ft-links">
+          <li><a href="#">Inner Sydney</a></li>
+          <li><a href="#">Eastern Suburbs</a></li>
+          <li><a href="#">Inner West</a></li>
+          <li><a href="#">North Shore</a></li>
+          <li><a href="#">Western Sydney</a></li>
+          <li><a href="#">All Greater Sydney</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">© 2025 BDS Plumbing · All Rights Reserved · Sydney, NSW</span>
+      <span class="ft-lic">Licensed NSW Plumber & Gas Fitter</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT CALL -->
+<div class="float" id="floatCta">
+  <a href="tel:0400000000" class="float-btn">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.27z"/></svg>
+    Call Joe Now
+  </a>
+</div>
+
+<script>
+  // Reveal
+  const revs = document.querySelectorAll('.rev');
+  const obs = new IntersectionObserver(e => e.forEach(x => {
+    if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}
+  }),{threshold:.1});
+  revs.forEach(el => obs.observe(el));
+
+  // Float
+  window.addEventListener('scroll', () =>
+    document.getElementById('floatCta').classList.toggle('on', scrollY > 400)
+  );
+
+  // Form
+  function submitForm(){
+    const n=document.getElementById('fn').value, p=document.getElementById('fp').value;
+    if(!n||!p){alert('Please enter your name and phone number.');return;}
+    document.getElementById('formWrap').style.display='none';
+    document.getElementById('fSuccess').style.display='block';
+  }
+</script>
+</body>
+</html>
